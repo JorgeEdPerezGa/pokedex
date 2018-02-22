@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import FakeContainer from '../../containers/FakeContainer/'
+import * as helper from '../../helper';
+import FakeContainer from '../../containers/FakeContainer/';
 
 class App extends Component {
+  componentDidMount() {
+    const fetchType = helper.fetchType();
+    console.log(fetchType);
+  }
 
   render() {
     return (
       <div className='App'>
-        <h1 className='header'> POKéDEX </h1>
+      <h1 className='header'> POKéDEX </h1>
         <FakeContainer />
       </div>
     );

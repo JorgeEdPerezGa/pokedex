@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import * as helper from '../../helper';
+import { connect } from 'react-redux';
+import { addPokemonTypes } from '../../actions';
 import FakeContainer from '../../containers/FakeContainer/';
 
 class App extends Component {
   async componentDidMount() {
     const fetchType = await helper.fetchType();
-    console.log(fetchType);
+    return this.props.addPokemonTypes(fetchType);
   }
 
   render() {
@@ -19,5 +21,8 @@ class App extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  addPokemonTypes: (pokemonType) => dispatch(addPokemonTypes(pokemonType))
+})
 
-export default App;
+export default connect(null, mapDispatchToProps)(App);

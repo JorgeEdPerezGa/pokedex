@@ -1,0 +1,11 @@
+import React from 'react';
+import { shallow } from 'enzyme';
+import App from './App';
+
+describe('PokemonCard', () => {
+  const renderedComponent = shallow(<App />);
+
+  it('should match snapshot', async () => {
+    expect(renderedComponent).toMatchSnapshot();
+  });
+});

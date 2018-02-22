@@ -16,9 +16,13 @@ class PokemonList extends Component {
 
   render() {
     return (
+      <section className="pokemon-list">
+      {!this.props.pokemonTypes[0] ?
+      <div> loading </div> :
       <div>
         {this.displayTypes()}
-      </div>
+      </div>}
+      </section>
     );
   }
 }

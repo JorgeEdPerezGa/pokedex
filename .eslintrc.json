@@ -3,7 +3,8 @@
         "browser": true,
         "es6": true,
         "node": true,
-        "mocha": true
+        "mocha": true,
+        "jest": true
     },
     "plugins": [
         "react"
@@ -34,7 +35,7 @@
       "computed-property-spacing": ["error", "never"],
       "func-call-spacing": ["error", "never"],
       "keyword-spacing": ["error", { "before": true, "after": true }],
-      "max-len": ["warn", 80],
+      "max-len": ["warn", 300],
       "no-duplicate-imports": "error",
       "id-length": "error",
       "id-blacklist": ["error", "err", "e", "cb", "callback", "payload", "obj", "arr"],

@@ -14,6 +14,7 @@ class PokemonList extends Component {
       return <PokemonCard
         key={type.id}
         type={type}
+        displayPokemon={this.displayPokemon}
       />
     })
   }

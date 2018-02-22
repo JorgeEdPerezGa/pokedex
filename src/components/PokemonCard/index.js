@@ -1,8 +1,10 @@
 import React from 'react';
 
-const PokemonCard = ({type}) => {
+const PokemonCard = ({type, displayPokemon}) => {
   return (
-    <article className="pokemon-card">
+    <article
+      className="pokemon-card"
+      onClick={() => {displayPokemon()}}>
       <p>{type.name}</p>
     </article>
   )

@@ -3,6 +3,11 @@ export const fetchType = async() => {
   return await fetchTypeData.json();
 }
 
-export const fetchPokemon = async(pokemon) => {
-  console.log(pokemon)
+export const fetchPokemon = (pokemon) => {
+  const fetchPokemon = pokemon.map(async(num) => {
+    const fetchPokemon = await fetch(`http://localhost:3001/pokemon/${num}`);
+    const pokemon = await fetchPokemon.json();
+    return pokemon;
+  })
+  return Promise.all(fetchPokemon)
 }

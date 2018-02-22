@@ -20,7 +20,8 @@ class PokemonList extends Component {
   }
 
   displayPokemon = async (pokemon) => {
-    const fetchPokemon = helper.fetchPokemon(pokemon);
+    const fetchPokemon = await helper.fetchPokemon(pokemon);
+    console.log(fetchPokemon);
   }
 
   render() {

@@ -66,6 +66,7 @@ const mapDispatchToProps = (dispatch) => ({
 PokemonList.propTypes = {
   pokemonTypes: PropTypes.array,
   pokemonGroup: PropTypes.array,
+  addPokemonTypes: PropTypes.func,
   addPokemonGroup: PropTypes.func
 };
 

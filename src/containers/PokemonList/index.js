@@ -7,20 +7,23 @@ import { addPokemonTypes } from '../../actions';
 
 class PokemonList extends Component {
 
+  displayTypes = () => {
+    this.props.pokemonTypes.map(type => {
+      console.log('type');
+    })
+  }
+
   render() {
     return (
       <div>
-        <button onClick={()=> {
-          this.props.fakeAction()
-          alert('FAKE')
-        }}> FAKE </button>
+        {this.displayTypes()}
       </div>
     );
   }
 }
 
 const mapStateToProps = (store) => ({
-  pokemonType: store.pokemonType
+  pokemonTypes: store.pokemonTypes
 })
 
 

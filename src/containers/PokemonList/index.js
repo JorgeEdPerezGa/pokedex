@@ -6,7 +6,7 @@ import { addPokemonTypes, addPokemonGroup } from '../../actions';
 import PokemonCard from '../PokemonCard';
 import './style.css';
 
-class PokemonList extends Component {
+export class PokemonList extends Component {
 
   async componentDidMount() {
     const fetchType = await helper.fetchType();

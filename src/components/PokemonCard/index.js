@@ -1,8 +1,8 @@
 import React from 'react';
 
-const PokemonCard = () => {
+const PokemonCard = ({type}) => {
   return (
-    <div>POKEMON CARD</div>
+    <div>{type.name}</div>
   )
 }
 

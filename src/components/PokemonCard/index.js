@@ -9,7 +9,7 @@ class PokemonCard extends Component {
         <article
           className="pokemon-card"
           onClick={() => {this.props.getPokemonGroup(this.props.type.pokemon)}}>
-          <p>{this.props.type.name}</p>
+          <p className="type-title">{this.props.type.name}</p>
         </article>
       </div>
     )

@@ -6,5 +6,5 @@ describe( 'pokemonTypes', () => {
     const expected = [];
     const action = actions.addPokemonTypes;
     expect(pokemonTypes([], action)).toEqual(expected);
-  })
-})
+  });
+});

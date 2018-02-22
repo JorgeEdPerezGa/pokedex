@@ -47,5 +47,9 @@
   text-align: center;
   margin: 12px;
   background: whitesmoke;
-  height: 280px;
+  height: 220px;
+}
+
+.image {
+  width: 130px;
 }

@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     console.log(this.props.pokemonType);
     return (
-      <div>
+      <div className='aplicacion'>
         <div className='App'>
         <h1 className='header'> POKéDEX </h1>
       </div>

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as helper from '../../helper';
 import { addPokemonTypes, addPokemonGroup } from '../../actions';
 import PokemonCard from '../../components/PokemonCard';
+import Pokemon from '../../components/Pokemon';
 import './style.css';
 
 
@@ -14,23 +15,35 @@ class PokemonList extends Component {
       return <PokemonCard
         key={type.id}
         type={type}
-        displayPokemon={this.displayPokemon}
+        getPokemonGroup={this.getPokemonGroup}
       />
     })
   }
 
-  displayPokemon = async (pokemon) => {
+  displayPokemon = () => {
+    return this.props.pokemonGroup.map(pokemon => {
+      console.log(pokemon);
+      return <div className="single-pokemon">
+        <p>{pokemon.name}</p>
+        <p>{pokemon.weight} kg</p>
+        <img src={pokemon.sprites.front_default}/>
+      </div>
+    })
+  }
+
+  getPokemonGroup = async (pokemon) => {
     const fetchPokemon = await helper.fetchPokemon(pokemon);
-    return this.props.addPokemonGroup(fetchPokemon)
+    this.props.addPokemonGroup(fetchPokemon)
   }
 
   render() {
     return (
-      <section className="pokemon-list">
+      <section>
       {!this.props.pokemonTypes[0] ?
       <div className="loading-pokemon"></div> :
-      <div>
-        {this.displayTypes()}
+      <div className="pokemon-list">
+        <div className="pokemon-types">{this.displayTypes()}</div>
+        <div className="pokemon-group">{this.displayPokemon()}</div>
       </div>}
       </section>
     );
@@ -38,7 +51,8 @@ class PokemonList extends Component {
 }
 
 const mapStateToProps = (store) => ({
-  pokemonTypes: store.pokemonTypes
+  pokemonTypes: store.pokemonTypes,
+  pokemonGroup: store.pokemonGroup
 })
 
 const mapDispatchToProps = (dispatch) => ({

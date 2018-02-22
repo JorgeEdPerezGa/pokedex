@@ -5,3 +5,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.pokemon-card {
+  height: 60px;
+  text-align: center;
+  background: #dedede;
+}
+
+.pokemon-card:hover {
+  cursor: pointer;
+}

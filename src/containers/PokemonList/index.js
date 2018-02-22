@@ -11,8 +11,15 @@ class PokemonList extends Component {
 
   displayTypes = () => {
     return this.props.pokemonTypes.map(type => {
-      return <PokemonCard type={type}/>
+      return <PokemonCard
+        key={type.id}
+        type={type}
+      />
     })
+  }
+
+  displayPokemon = () => {
+    console.log('display pokemon');
   }
 
   render() {

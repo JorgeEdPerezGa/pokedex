@@ -2,7 +2,9 @@ import React from 'react';
 
 const PokemonCard = ({type}) => {
   return (
-    <div>{type.name}</div>
+    <article className="pokemon-card">
+      <p>{type.name}</p>
+    </article>
   )
 }
 

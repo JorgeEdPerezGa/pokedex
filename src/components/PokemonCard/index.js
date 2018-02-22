@@ -4,7 +4,7 @@ const PokemonCard = ({type, displayPokemon}) => {
   return (
     <article
       className="pokemon-card"
-      onClick={() => {displayPokemon()}}>
+      onClick={() => {displayPokemon(type.pokemon)}}>
       <p>{type.name}</p>
     </article>
   )

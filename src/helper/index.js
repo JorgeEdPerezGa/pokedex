@@ -3,6 +3,6 @@ export const fetchType = async() => {
   return await fetchTypeData.json();
 }
 
-export const fetchPokemon = async() => {
-  console.log('pokemon');
+export const fetchPokemon = async(pokemon) => {
+  console.log(pokemon)
 }

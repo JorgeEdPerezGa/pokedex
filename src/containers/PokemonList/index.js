@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as helper from '../../helper';
 import { addPokemonTypes } from '../../actions';
 import PokemonCard from '../../components/PokemonCard';
+import './style.css';
 
 
 class PokemonList extends Component {
@@ -18,7 +19,7 @@ class PokemonList extends Component {
     return (
       <section className="pokemon-list">
       {!this.props.pokemonTypes[0] ?
-      <div> loading </div> :
+      <div className="loading-pokemon"></div> :
       <div>
         {this.displayTypes()}
       </div>}

@@ -53,3 +53,12 @@
 .image {
   width: 130px;
 }
+
+.no-pokemon {
+  background-image: url('http://25.media.tumblr.com/tumblr_m4wqgofzSa1rs1aa4o9_r1_500.gif');
+  height: 500px;
+  width: 500px;
+  margin-top: 90px;
+  margin-left: auto;
+  margin-right: auto;
+}

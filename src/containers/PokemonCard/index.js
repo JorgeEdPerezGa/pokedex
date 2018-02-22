@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-class PokemonCard extends Component {
+export class PokemonCard extends Component {
 
   render() {
     return  (

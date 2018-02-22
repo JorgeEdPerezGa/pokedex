@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import PropTypes, { shape, func, string } from 'prop-types';
 import * as helper from '../../helper';
-import { addPokemonTypes } from '../../actions';
+import { addPokemonTypes, addPokemonGroup } from '../../actions';
 import PokemonCard from '../../components/PokemonCard';
 import './style.css';
 
@@ -11,8 +11,17 @@ class PokemonList extends Component {
 
   displayTypes = () => {
     return this.props.pokemonTypes.map(type => {
-      return <PokemonCard type={type}/>
+      return <PokemonCard
+        key={type.id}
+        type={type}
+        displayPokemon={this.displayPokemon}
+      />
     })
+  }
+
+  displayPokemon = async (pokemon) => {
+    const fetchPokemon = await helper.fetchPokemon(pokemon);
+    return this.props.addPokemonGroup(fetchPokemon)
   }
 
   render() {
@@ -32,10 +41,13 @@ const mapStateToProps = (store) => ({
   pokemonTypes: store.pokemonTypes
 })
 
+const mapDispatchToProps = (dispatch) => ({
+  addPokemonGroup: (pokemon) => dispatch(addPokemonGroup(pokemon))
+})
 
 // PokemonList.propTypes = {
 //   // fake: shape({ fake: string }),
 //   fakeAction: func.isRequired
 // };
 
-export default connect(mapStateToProps)(PokemonList);
+export default connect(mapStateToProps, mapDispatchToProps)(PokemonList);

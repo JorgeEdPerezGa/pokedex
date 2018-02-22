@@ -4,6 +4,7 @@ import * as helper from '../../helper';
 import { connect } from 'react-redux';
 import { addPokemonTypes } from '../../actions';
 import FakeContainer from '../../containers/FakeContainer/';
+import PokemonList from '../../containers/PokemonList';
 
 class App extends Component {
   async componentDidMount() {
@@ -12,17 +13,25 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props.pokemonType);
     return (
-      <div className='App'>
-      <h1 className='header'> POKéDEX </h1>
-        <FakeContainer />
+      <div>
+        <div className='App'>
+        <h1 className='header'> POKéDEX </h1>
+      </div>
+        <PokemonList />
       </div>
     );
   }
 }
 
+
+const mapStateToProps = (state) => ({
+  pokemonType: state.pokemonType
+})
+
 const mapDispatchToProps = (dispatch) => ({
   addPokemonTypes: (pokemonType) => dispatch(addPokemonTypes(pokemonType))
 })
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

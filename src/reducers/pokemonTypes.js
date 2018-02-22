@@ -6,3 +6,5 @@ export const pokemonTypes = (state=[], action) => {
     return state;
   }
 };
+
+export default pokemonTypes;

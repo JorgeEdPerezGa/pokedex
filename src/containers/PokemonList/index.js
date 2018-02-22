@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as helper from '../../helper';
 import { addPokemonTypes, addPokemonGroup } from '../../actions';
-import PokemonCard from '../../components/PokemonCard';
-import Pokemon from '../../components/Pokemon';
+import PokemonCard from '../PokemonCard';
 import './style.css';
 
 class PokemonList extends Component {

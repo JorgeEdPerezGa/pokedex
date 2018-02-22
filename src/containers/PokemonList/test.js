@@ -6,7 +6,6 @@ describe('PokemonList', () => {
   let renderedComponent;
 
   beforeEach(() => {
-    const displayTypesMock = jest.fn();
     renderedComponent = shallow(
       <PokemonList
         pokemonTypes={[]}

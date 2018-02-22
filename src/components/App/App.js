@@ -18,8 +18,7 @@ class App extends Component {
       <div>
         <div className='App'>
         <h1 className='header'> POKéDEX </h1>
-    </div>
-        {/* <FakeContainer /> */}
+      </div>
         <PokemonList />
       </div>
     );

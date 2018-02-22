@@ -1,6 +1,14 @@
 export const fetchType = async() => {
-  const fetchTypeData = await fetch('http://localhost:3001/types');
-  return await fetchTypeData.json();
+  try {
+    const fetchType = await fetch('http://localhost:3001/types');
+    if (fetchType.status > 299) {
+      throw new Error('could not fetch type');
+    } else {
+      return await fetchType.json();
+    }
+  }  catch (error) {
+    throw error;
+  }
 };
 
 export const fetchPokemon = (pokemon) => {

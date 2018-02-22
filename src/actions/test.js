@@ -14,4 +14,17 @@ describe('actions', () => {
       expect(actions.addPokemonTypes(pokemonTypes)).toEqual(expected);
     });
   });
+
+  describe('addPokemonGroup', () => {
+
+    it('should return a type of ADD_POKEMON_GROUP with an array of pokemon', () => {
+      const pokemonGroup = ['pokeon 1', 'pokemon 2', 'pokemon 3'];
+      const expected = {
+        type: "ADD_POKEMON_GROUP",
+        pokemonGroup
+      };
+
+      expect(actions.addPokemonGroup(pokemonGroup)).toEqual(expected);
+    });
+  });
 });

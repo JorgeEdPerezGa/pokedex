@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import { PokemonCard } from './index';
 
-describe('App', () => {
-  const renderedComponent = shallow(<App />);
+describe('PokemonCard', () => {
+  const renderedComponent = shallow(<PokemonCard type={{}}/>);
 
   it('should match snapshot', async () => {
     expect(renderedComponent).toMatchSnapshot();

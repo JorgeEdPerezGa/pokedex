@@ -9,6 +9,11 @@ import './style.css';
 
 class PokemonList extends Component {
 
+  async componentDidMount() {
+    const fetchType = await helper.fetchType();
+    return this.props.addPokemonTypes(fetchType);
+  }
+
   displayTypes = () => {
     return this.props.pokemonTypes.map(type => {
       return <PokemonCard
@@ -54,6 +59,7 @@ const mapStateToProps = (store) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  addPokemonTypes: (pokemonType) => dispatch(addPokemonTypes(pokemonType)),
   addPokemonGroup: (pokemon) => dispatch(addPokemonGroup(pokemon))
 });
 

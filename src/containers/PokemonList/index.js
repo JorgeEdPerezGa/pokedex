@@ -7,7 +7,6 @@ import PokemonCard from '../../components/PokemonCard';
 import Pokemon from '../../components/Pokemon';
 import './style.css';
 
-
 class PokemonList extends Component {
 
   displayTypes = () => {
@@ -16,35 +15,34 @@ class PokemonList extends Component {
         key={type.id}
         type={type}
         getPokemonGroup={this.getPokemonGroup}
-      />
-    })
+      />;
+    });
   }
 
   displayPokemon = () => {
     return this.props.pokemonGroup.map(pokemon => {
-      console.log(pokemon);
-      return <div className="single-pokemon">
+      return <div key={pokemon.id} className="single-pokemon">
         <p>{pokemon.name}</p>
         <p>{pokemon.weight} kg</p>
         <img className="image" src={pokemon.sprites.front_default}/>
-      </div>
-    })
+      </div>;
+    });
   }
 
   getPokemonGroup = async (pokemon) => {
     const fetchPokemon = await helper.fetchPokemon(pokemon);
-    this.props.addPokemonGroup(fetchPokemon)
+    this.props.addPokemonGroup(fetchPokemon);
   }
 
   render() {
     return (
       <section>
-      {!this.props.pokemonTypes[0] ?
-      <div className="loading-pokemon"></div> :
-      <div className="pokemon-list">
-        <div className="pokemon-types">{this.displayTypes()}</div>
-        <div className="pokemon-group">{this.displayPokemon()}</div>
-      </div>}
+        {!this.props.pokemonTypes[0] ?
+          <div className="loading-pokemon"></div> :
+          <div className="pokemon-list">
+            <div className="pokemon-types">{this.displayTypes()}</div>
+            <div className="pokemon-group">{this.displayPokemon()}</div>
+          </div>}
       </section>
     );
   }
@@ -60,7 +58,9 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 PokemonList.propTypes = {
-  pokemonTypes: PropTypes.string
+  pokemonTypes: PropTypes.array,
+  pokemonGroup: PropTypes.array,
+  addPokemonGroup: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonList);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import PropTypes, { shape, func, string } from 'prop-types';
+import PropTypes from 'prop-types';
 import * as helper from '../../helper';
 import { addPokemonTypes, addPokemonGroup } from '../../actions';
 import PokemonCard from '../../components/PokemonCard';
@@ -26,7 +26,7 @@ class PokemonList extends Component {
       return <div className="single-pokemon">
         <p>{pokemon.name}</p>
         <p>{pokemon.weight} kg</p>
-        <img src={pokemon.sprites.front_default}/>
+        <img className="image" src={pokemon.sprites.front_default}/>
       </div>
     })
   }
@@ -53,15 +53,14 @@ class PokemonList extends Component {
 const mapStateToProps = (store) => ({
   pokemonTypes: store.pokemonTypes,
   pokemonGroup: store.pokemonGroup
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   addPokemonGroup: (pokemon) => dispatch(addPokemonGroup(pokemon))
-})
+});
 
-// PokemonList.propTypes = {
-//   // fake: shape({ fake: string }),
-//   fakeAction: func.isRequired
-// };
+PokemonList.propTypes = {
+  pokemonTypes: PropTypes.string
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonList);

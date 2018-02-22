@@ -33,5 +33,19 @@
   width: 410px;
   background: #6b091e;
   padding: 22px;
+}
 
+.pokemon-group {
+  width: 100%;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-pokemon {
+  width: 160px;
+  text-align: center;
+  margin: 12px;
+  background: whitesmoke;
+  height: 280px;
 }

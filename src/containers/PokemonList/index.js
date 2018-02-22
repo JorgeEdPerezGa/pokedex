@@ -23,9 +23,9 @@ class PokemonList extends Component {
   displayPokemon = () => {
     return this.props.pokemonGroup.map(pokemon => {
       console.log(pokemon);
-      return <div>
+      return <div className="single-pokemon">
         <p>{pokemon.name}</p>
-        <p>{pokemon.weight}</p>
+        <p>{pokemon.weight} kg</p>
         <img src={pokemon.sprites.front_default}/>
       </div>
     })
@@ -43,7 +43,7 @@ class PokemonList extends Component {
       <div className="loading-pokemon"></div> :
       <div className="pokemon-list">
         <div className="pokemon-types">{this.displayTypes()}</div>
-        <div>{this.displayPokemon()}</div>
+        <div className="pokemon-group">{this.displayPokemon()}</div>
       </div>}
       </section>
     );

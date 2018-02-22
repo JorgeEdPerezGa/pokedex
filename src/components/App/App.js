@@ -4,8 +4,8 @@ import * as helper from '../../helper';
 import FakeContainer from '../../containers/FakeContainer/';
 
 class App extends Component {
-  componentDidMount() {
-    const fetchType = helper.fetchType();
+  async componentDidMount() {
+    const fetchType = await helper.fetchType();
     console.log(fetchType);
   }
 

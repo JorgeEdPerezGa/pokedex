@@ -1,3 +1,4 @@
 export const fetchType = async() => {
-  console.log('helper');
+  const fetchTypeData = await fetch('http://localhost:3001/types');
+  return await fetchTypeData.json();
 }

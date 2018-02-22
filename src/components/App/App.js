@@ -15,8 +15,10 @@ class App extends Component {
   render() {
     console.log(this.props.pokemonType);
     return (
-      <div className='App'>
-      <h1 className='header'> POKéDEX </h1>
+      <div>
+        <div className='App'>
+        <h1 className='header'> POKéDEX </h1>
+    </div>
         {/* <FakeContainer /> */}
         <PokemonList />
       </div>

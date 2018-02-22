@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 // import PropTypes, { shape, func, string } from 'prop-types';
 import * as helper from '../../helper';
 import { addPokemonTypes } from '../../actions';
+import PokemonCard from '../../components/PokemonCard';
 
 
 class PokemonList extends Component {
 
   displayTypes = () => {
-    this.props.pokemonTypes.map(type => {
-      console.log('type');
+    return this.props.pokemonTypes.map(type => {
+      return <PokemonCard type={type}/>
     })
   }
 

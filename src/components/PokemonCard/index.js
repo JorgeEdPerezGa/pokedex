@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const PokemonCard = ({type, displayPokemon}) => {
-  return (
-    <article
-      className="pokemon-card"
-      onClick={() => {displayPokemon(type.pokemon)}}>
-      <p>{type.name}</p>
-    </article>
-  )
+class PokemonCard extends Component {
+
+  render() {
+    return  (
+      <div>
+        <article
+          className="pokemon-card"
+          onClick={() => {this.props.getPokemonGroup(this.props.type.pokemon)}}>
+          <p>{this.props.type.name}</p>
+        </article>
+      </div>
+    )
+  }
 }
 
-export default PokemonCard;
+const mapStateToProps = (store) => ({
+  pokemonGroup: store.pokemonGroup
+})
+
+export default connect(mapStateToProps)(PokemonCard);

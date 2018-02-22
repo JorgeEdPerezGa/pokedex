@@ -28,7 +28,7 @@ class PokemonList extends Component {
       return <div key={pokemon.id} className="single-pokemon">
         <p>{pokemon.name}</p>
         <p>{pokemon.weight} kg</p>
-        <img className="image" src={pokemon.sprites.front_default}/>
+        <img className="image" alt="pokemon" src={pokemon.sprites.front_default}/>
       </div>;
     });
   }

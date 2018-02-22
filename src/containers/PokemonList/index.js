@@ -24,6 +24,9 @@ export class PokemonList extends Component {
   }
 
   displayPokemon = () => {
+    if (!this.props.pokemonGroup[0]){
+      return <div className="no-pokemon"></div>;
+    }
     return this.props.pokemonGroup.map(pokemon => {
       return <div key={pokemon.id} className="single-pokemon">
         <p>{pokemon.name}</p>
